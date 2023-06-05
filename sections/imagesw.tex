@@ -80,7 +80,7 @@ uint8[] data\end{lstlisting}
 \end{frame}
 \begin{frame}{ROS tools for image processing}{A note on topic statistics}
   \begin{alertblock}{Beware!}
-    When measuring image topics publishing rates with \texttt{ros2 topic hz}, especially \textbr{over a lossy network}, you may get \textbr{wrong results}. This is because of
+    When measuring image topics publishing rates with \texttt{ros2 topic hz}, especially \textbr{over a lossy network}, you may get \textbr{wrong results}. This is because of:
     \begin{itemize}
       \item the \textbr{Python DDS implementation} not being so efficient;
       \item the \textbr{hz} Python tool buffering messages into a window-based filter.

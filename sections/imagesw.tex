@@ -40,12 +40,12 @@
 
 % --- ROS tools for image processing ---
 \begin{frame}{ROS tools for image processing}{A quick overview}
-	ROS provides a wide range of tools to acquire, process, and transmit images. The most important ones are:
+	\textbg{ROS 2} provides a wide range of \textbg{tools} to acquire, process, and transmit images. The most important ones are:
 	\begin{itemize}
-		\item \texttt{sensor\_msgs/Image}: the standard ROS message type to transmit images over the DDS layer;
-		\item \texttt{sensor\_msgs/CameraInfo}: the standard ROS message type to transmit and parse camera calibration parameters;
-		\item \href{https://wiki.ros.org/image_transport}{\color{blue}\underline{\texttt{image\_transport}}}: a ROS package to transmit images over the DDS layer;
-		\item \href{https://wiki.ros.org/camera_info_manager}{\color{blue}\underline{\texttt{camera\_info\_manager}}}: a library to parse, use, and store camera calibration parameters from configuration files and messages inside ROS nodes.
+		\item \texttt{sensor\_msgs/Image}: the standard ROS \textbg{message type} to transmit \textbg{images} over the DDS layer;
+		\item \texttt{sensor\_msgs/CameraInfo}: the standard ROS \textbg{message type} to transmit and parse \textbg{camera calibration parameters};
+		\item \href{https://wiki.ros.org/image_transport}{\color{blue}\underline{\texttt{image\_transport}}}: a ROS package to \textbg{transmit images} over the DDS layer;
+		\item \href{https://wiki.ros.org/camera_info_manager}{\color{blue}\underline{\texttt{camera\_info\_manager}}}: a library to parse, use, and store \textbg{camera calibration parameters} from configuration files and messages inside ROS nodes.
 	\end{itemize}
 \end{frame}
 \begin{frame}[fragile]{ROS tools for image processing}{The Image message}
@@ -82,7 +82,7 @@ uint8[] data\end{lstlisting}
   \begin{alertblock}{Beware!}
     When measuring image topics publishing rates with \texttt{ros2 topic hz}, especially \textbr{over a lossy network}, you may get \textbr{wrong results}. This is because of:
     \begin{itemize}
-      \item the \textbr{Python DDS implementation} not being so efficient;
+      \item the \textbr{Python DDS implementation};
       \item the \textbr{hz} Python tool buffering messages into a window-based filter.
     \end{itemize}
     To check the real sampling and receiving rates, \textbr{place publishers of ordinary messages} in your code on both ends, and ispect those instead!\\
